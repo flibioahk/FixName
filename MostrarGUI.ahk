@@ -1,5 +1,7 @@
 #Include Class_LV_Colors.ahk
 
+tNoDir := Object()
+
 MostrarGUI(num_elem, num_errors := 0)
 {
 	global tFixes, tNoDir, tErrors, CLV1, CLV2, HLV1, exp_hwnd
@@ -122,13 +124,13 @@ GuiClose()
 
 AcabarExecucio()
 {
-	global tPaths, tFixes, tNoDir, tErrors, CLV1, CLV2
+	global tPaths, tFixes, tErrors, CLV1, CLV2, tIDs, fitxer_ids, tNoms, fitxer_noms
 	
 	Gui, Destroy
-	DesaIDs()
+	DesaFitxer(tIDs, fitxer_ids)
+	DesaFitxer(tNoms, fitxer_noms)
 	tPaths := ""
 	tFixes := ""
-	tNoDir := ""
 	tErrors := ""
 	CLV1 := ""
 	CLV2 := ""
